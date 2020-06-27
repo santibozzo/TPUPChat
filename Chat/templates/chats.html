@@ -6,11 +6,15 @@
 		<h1 class="chats-tittle">Your chats</h1>
 
 		<div class="chats-chats-section">
-			{% for username in usernames_list %}
+			{% for chat in chats_list %}
 				<div class="chats-chat">
-					{{username}}
+					{% if chat.user1 != current_user.username %}
+						{{chat.user1}}
+					{% else %}
+						{{chat.user2}}
+					{% endif %}
 					<div>
-						<a class="chats-a" href="/chat?user={{username}}">
+						<a class="chats-a" href="/chat?id={{chat.id}}">
 							<button type="button" class="chats-chat-button">
 								Chat
 							</button>

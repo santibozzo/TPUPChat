@@ -12,7 +12,7 @@
 		----
 	{% endfor %}
 
-	<form method="POST" action="/chat?to={{other_user}}">
+	<form method="POST" action="/chat?id={{chat_id}}">
 		<input type="text" name="message" placeholder="Write new message..."/>
 		<button>Send message</button>
 	</form>

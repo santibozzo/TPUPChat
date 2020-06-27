@@ -48,7 +48,10 @@ class Chat(db.Model):
 def get_user_chats(username):
 	return Chat.query.filter((Chat.user1 == username) | (Chat.user2 == username))
 
-def get_chat(username1, username2):
+def get_chat(chat_id):
+	return Chat.query.filter_by(id=chat_id)
+
+def get_chat_by_participants(username1, username2):
 	chat = Chat.query.filter_by(user1=username1, user2=username2)
 	if chat:
 		return chat
@@ -66,15 +69,13 @@ class Message(db.Model):
 	__tablename__ = 'messages'
 
 	id = db.Column(db.Integer, primary_key=True, unique=True)
+	chat = db.Column(db.Integer)
 	from_user = db.Column(db.String(150))
-	to_user = db.Column(db.String(150))
 	date = db.Column(db.DateTime)
 	message = db.Column(db.String(500))
 
-def get_chat_messages(username1, username2):
-	return Message.query.filter(
-		((Message.from_user == username1) & (Message.to_user == username2)) | ((Message.from_user == username2) & (Message.to_user == username1))
-	).order_by(Message.date).all()
+def get_chat_messages(chat_id):
+	return Message.query.filter_by(chat=chat_id).order_by(Message.date).all()
 
 def create_message(message):
 	db.session.add(message)

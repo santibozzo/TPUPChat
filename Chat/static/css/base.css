@@ -50,6 +50,10 @@ button:hover {
 	background-color: var(--UPChatHoverColor);
 }
 
+button:focus {
+	outline: 0;
+}
+
 .error-message-div {
 	border-radius: 5px;
 	background-color: var(--ErrorColor);
