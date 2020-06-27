@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="login-form">
+	<h1 class="login-tittle">UP Chat</h1>
+	<form method="POST" action="/login">
+		<input class="login-input" type="text" name="username" placeholder="username" autofocus=""/>
+		<input class="login-input" type="password" name="password" placeholder="password" />
+		<button class="login-button">Login</button>
+	</form>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+<div>
+
+	<h3>CHAT</h3>
+
+	{% for message in messages %}
+		<div>{{message.from_user}}-{{message.date}}</div>
+		<div>{{message.message}}</div>
+		----
+	{% endfor %}
+
+	<form method="POST" action="/chat?to={{other_user}}">
+		<input type="text" name="message" placeholder="Write new message..."/>
+		<button>Send message</button>
+	</form>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			<div>
+				{{messages[0]}}
+			</div>
+		{% endif %}
+	{% endwith %}
+</div>
+{% endblock %}

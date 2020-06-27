@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+	<h3>MAIN INDEX</h3>
+	{{username}}
+	{% if current_user.is_authenticated %}
+		Welcome {{current_user.username}}!
+		<form method="POST" action="/logout">
+			<button>Logout</button>
+		</form>
+	{% endif %}
+</body>
+{% endblock %}

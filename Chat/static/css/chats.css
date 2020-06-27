@@ -1,0 +1,92 @@
+.chats-container {
+	text-align: center;
+}
+
+.chats-tittle {
+	font-family: sans-serif;
+	margin: 20px 0 20px 0;
+}
+
+/* --- CHATS SECTION --- */
+
+.chats-chats-section {
+	height: 60vh;
+	width: 80%;
+	margin: auto;
+	padding: 10px;
+	overflow-y: scroll;
+	border-radius: 2px;
+	box-shadow: 0 0 15px 2px var(--SectionBackGColor);
+}
+
+.chats-chat {
+	display: inline-block;
+	width: 20%;
+	padding: 5px 10px 5px 10px;
+	margin: 5px;
+	text-align: center;
+	border: 1px solid var(--UPChatColor);
+	border-radius: 5px;
+	background-color: var(--SectionBackGColor);
+}
+
+.chats-a {
+	color: var(--TextColor);
+}
+
+.chats-a:hover {
+	color: var(--TextColor);
+	text-decoration: none;
+}
+
+.chats-chat-button-form {
+	display: inline-block;
+	width: 40%;
+	margin: 2px;
+}
+
+.chats-chat-button {
+	display: inline-block;
+	width: 40%;
+	margin: 2px;
+	background-color: var(--AcceptColor);
+}
+
+.chats-chat-button:hover {
+	background-color: var(--AcceptHoverColor);
+}
+
+.chats-delete-button {
+	width: 100%;
+	background-color: var(--ErrorColor);
+}
+
+.chats-delete-button:hover {
+	background-color: var(--ErrorHoverColor);
+}
+
+/* --- CREATE CHAT --- */
+
+.chats-form {
+	width: 30%;
+	margin: 10px auto 10px auto;
+	padding: 10px 20px 10px 20px;
+	text-align: center;
+}
+
+.chats-form-input {
+	display: block;
+	width: 70%;
+	margin: auto;
+	text-align: center;
+}
+
+.chats-form-error {
+	width: 70%;
+	margin-top: 5px;
+}
+
+.chats-form-button {
+	width: 70%;
+	margin-top: 5px;
+}

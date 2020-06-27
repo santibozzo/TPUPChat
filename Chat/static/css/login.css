@@ -1,0 +1,29 @@
+.login-form {
+	width: 30%;
+	min-height: 30vh;
+	margin: auto;
+	margin-top: 20vh;
+	padding: 20px 10px 20px 10px;
+	text-align: center;
+	border: 1px solid var(--UPChatColor);
+	border-radius: 5px;
+	background-color: var(--SectionBackGColor);
+}
+
+.login-tittle {
+	margin-bottom: 20px;
+	font-family: 'MuseoModerno', sans-serif;
+}
+
+.login-input{
+	width: 70%;
+	display: block;
+	text-align: center;
+	margin: auto;
+	margin-top: 5px;
+}
+
+.login-button {
+	width: 40%;
+	margin-top: 15px;
+}

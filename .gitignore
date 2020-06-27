@@ -1,0 +1,8 @@
+# IDE
+.idea/
+
+# bin
+__pycache__/
+
+# local config
+Chat/config.py

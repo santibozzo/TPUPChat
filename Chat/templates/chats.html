@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Chats{% endblock %}
+
+{% block content %}
+	<div class="chats-container">
+		<h1 class="chats-tittle">Your chats</h1>
+
+		<div class="chats-chats-section">
+			{% for username in usernames_list %}
+				<div class="chats-chat">
+					{{username}}
+					<div>
+						<a class="chats-a" href="/chat?user={{username}}">
+							<button type="button" class="chats-chat-button">
+								Chat
+							</button>
+						</a>
+						<form class="chats-chat-button-form" method="DELETE" action="/chats">
+							<button class="chats-delete-button">
+								Delete
+							</button>
+						</form>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+		<div class="chats-form">
+			<form method="POST" action="/chats">
+				<input class="chats-form-input" type="text" name="username" placeholder="username"/>
+				{% with messages = get_flashed_messages() %}
+					{% if messages %}
+						<div class="chats-form-error">
+							{{messages[0]}}
+						</div>
+					{% endif %}
+				{% endwith %}
+				<button class="chats-form-button">Create new chat</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}

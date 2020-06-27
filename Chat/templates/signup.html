@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+	<div class="signup-form">
+		<h1 class="signup-tittle">UP Chat</h1>
+		<form method="POST" action="/signup">
+			<input class="signup-input" type="text" name="username" placeholder="username" autofocus=""/>
+			<input class="signup-input" type="password" name="password" placeholder="password" />
+			<input class="signup-input" type="password" name="repeatPassword" placeholder="repeat password" />
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<div class="error-message-div singup-error">
+						{{messages[0]}}
+					</div>
+				{% endif %}
+			{% endwith %}
+			<button class="signup-button" >Sign up</button>
+		</form>
+	</div>
+{% endblock %}

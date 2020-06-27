@@ -1,0 +1,18 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Chat Santi{% endblock %}
+
+{% block styles %}
+	{{super()}}
+	<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/signup.css')}}"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/chats.css')}}"/>
+	<link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block navbar %}
+<h3>Bienvenidos al chat de santi</h3>
+{% endblock %}
+
+{% block content %}
+{% endblock %}

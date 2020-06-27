@@ -1,0 +1,58 @@
+
+:root {
+	--BackGColor: #4f545c;
+	--SectionBackGColor: #36393F;
+	--TextColor: white;
+	--UPChatColor: dodgerblue;
+	--UPChatHoverColor: #1b4992;
+	--ErrorColor: #e61c10;
+	--ErrorHoverColor: #991b10;
+	--AcceptColor: #00a600;
+	--AcceptHoverColor: #006a00;
+	--InputComponentsHeight: 30px;
+}
+
+body {
+	background-color: var(--BackGColor);
+	color: var(--TextColor);
+}
+
+h1 {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+	color: var(--UPChatColor);
+	font-weight: bold;
+	font-size: 40px;
+}
+
+input {
+	color: black;
+	height: var(--InputComponentsHeight);
+	border-radius: 5px;
+	border: 0;
+}
+
+input:focus {
+	outline: 0;
+}
+
+button {
+	height: var(--InputComponentsHeight);
+	padding: 0 10px 0 10px;
+	border-radius: 5px;
+	border: 0;
+	background-color: var(--UPChatColor);
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: var(--UPChatHoverColor);
+}
+
+.error-message-div {
+	border-radius: 5px;
+	background-color: var(--ErrorColor);
+	padding: 5px 10px 5px 10px;
+	margin: 5px auto 5px auto;
+}
