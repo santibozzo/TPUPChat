@@ -46,16 +46,16 @@ class Chat(db.Model):
 		return f"<Chat {self.id}>"
 
 def get_user_chats(username):
-	return Chat.query.filter((Chat.user1 == username) | (Chat.user2 == username))
+	return Chat.query.filter((Chat.user1 == username) | (Chat.user2 == username)).all()
 
 def get_chat(chat_id):
-	return Chat.query.filter_by(id=chat_id)
+	return Chat.query.filter_by(id=chat_id).first()
 
 def get_chat_by_participants(username1, username2):
-	chat = Chat.query.filter_by(user1=username1, user2=username2)
+	chat = Chat.query.filter_by(user1=username1, user2=username2).first()
 	if chat:
 		return chat
-	return Chat.query.filter_by(user1=username2, user2=username1)
+	return Chat.query.filter_by(user1=username2, user2=username1).first()
 
 def create_chat(new_chat):
 	db.session.add(new_chat)
@@ -75,7 +75,7 @@ class Message(db.Model):
 	message = db.Column(db.String(500))
 
 def get_chat_messages(chat_id):
-	return Message.query.filter_by(chat=chat_id).order_by(Message.date).all()
+	return Message.query.filter_by(chat=chat_id).order_by(Message.date.desc()).all()
 
 def create_message(message):
 	db.session.add(message)

@@ -3,12 +3,14 @@
 	--BackGColor: #4f545c;
 	--SectionBackGColor: #36393F;
 	--TextColor: white;
+	--TextBlackColor: #303030;
 	--UPChatColor: dodgerblue;
 	--UPChatHoverColor: #1b4992;
 	--ErrorColor: #e61c10;
 	--ErrorHoverColor: #991b10;
 	--AcceptColor: #00a600;
 	--AcceptHoverColor: #006a00;
+	--OwnMessageBackGColor: #dcf8c6;
 	--InputComponentsHeight: 30px;
 }
 

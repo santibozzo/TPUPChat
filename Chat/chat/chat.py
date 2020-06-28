@@ -17,8 +17,9 @@ def chat_get():
 	chat_id = request.args.get('id')
 	chat = get_chat(chat_id)
 	if chat:
+		other_user = chat.user1 if chat.user1 != current_user.username else chat.user2
 		messages = get_chat_messages(chat_id)
-		return render_template('chat.html', messages=messages, chat_id=chat_id)
+		return render_template('chat.html', messages=messages, chat=chat)
 	return redirect(url_for('chats.chats_get'))
 
 @chat.route('/chat', methods=['POST'])

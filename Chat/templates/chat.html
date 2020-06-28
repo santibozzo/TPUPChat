@@ -2,26 +2,59 @@
 {% block title %}Chat{% endblock %}
 
 {% block content %}
-<div>
+<div class="chat-container">
 
-	<h3>CHAT</h3>
-
-	{% for message in messages %}
-		<div>{{message.from_user}}-{{message.date}}</div>
-		<div>{{message.message}}</div>
-		----
-	{% endfor %}
-
-	<form method="POST" action="/chat?id={{chat_id}}">
-		<input type="text" name="message" placeholder="Write new message..."/>
-		<button>Send message</button>
-	</form>
-	{% with messages = get_flashed_messages() %}
-		{% if messages %}
-			<div>
-				{{messages[0]}}
-			</div>
+	<h1 class="chat-tittle">
+		Chat with
+		{% if chat.user1 != current_user.username %}
+			{{chat.user1}}
+		{% else %}
+			{{chat.user2}}
 		{% endif %}
-	{% endwith %}
+	</h1>
+
+	<div class="chat-messages-section">
+		{% for message in messages %}
+			{% if message.from_user != current_user.username %}
+				<div class="chat-other-message-row">
+					<div class="chat-message chat-other-message">
+						<div class="chat-message-username">
+							{{message.from_user}}
+						</div>
+						<div class="chat-message-message">
+							{{message.message}}
+						</div>
+						<div class="chat-message-date">
+							{{message.date}}
+						</div>
+					</div>
+				</div>
+			{% else %}
+				<div class="chat-own-message-row">
+					<div class="chat-message chat-own-message">
+						<div class="chat-message-message">
+							{{message.message}}
+						</div>
+						<div class="chat-message-date">
+							{{message.date}}
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+	<div class="chat-form">
+		<form method="POST" action="/chat?id={{chat.id}}">
+			<textarea class="chat-textarea" name="message" placeholder="Write new message..." ></textarea>
+			<button class="chat-send-button">Send</button>
+		</form>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<div class="error-message-div chat-error">
+					{{messages[0]}}
+				</div>
+			{% endif %}
+		{% endwith %}
+	</div>
 </div>
 {% endblock %}
