@@ -5,4 +5,4 @@
 __pycache__/
 
 # local config
-Chat/config.py
+.env

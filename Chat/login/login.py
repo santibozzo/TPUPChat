@@ -14,7 +14,7 @@ login = Blueprint('login', __name__)
 @login.route('/login', methods=['GET'])
 def login_get():
 	if current_user.is_authenticated:
-		return render_template('index.html')
+		return redirect(url_for('chats.chats_get'))
 	return render_template('login.html')
 
 @login.route('/login', methods=['POST'])

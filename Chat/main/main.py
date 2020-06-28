@@ -11,7 +11,7 @@ main = Blueprint('main', __name__)
 @main.route('/home')
 def home():
 	if current_user.is_authenticated:
-		redirect(url_for('chats.chats_get'))
+		return redirect(url_for('chats.chats_get'))
 	return render_template('home.html')
 
 @main.route('/logout', methods=['POST'])

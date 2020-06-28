@@ -3,17 +3,19 @@ from .config import config
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
+from dotenv import load_dotenv
+import os
 
 db = SQLAlchemy()
 bootstrap = Bootstrap()
 login_manager = LoginManager()
 
 
-def create_app(config_name='development'):
-
+def create_app():
+	load_dotenv()
 	app = Flask(__name__)
 
-	app.config.from_object(config[config_name])
+	app.config.from_object(config[os.environ.get('PROFILE')])
 
 	db.init_app(app)
 	bootstrap.init_app(app)
