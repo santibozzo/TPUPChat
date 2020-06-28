@@ -13,7 +13,7 @@ signup = Blueprint('signup', __name__)
 @signup.route('/signup', methods=['GET'])
 def signup_get():
 	if current_user.is_authenticated:
-		return render_template('index.html')
+		return redirect(url_for('chats.chats_get'))
 	return render_template('signup.html')
 
 @signup.route('/signup', methods=['POST'])
@@ -24,6 +24,12 @@ def signup_post():
 	user = get_user(username)
 	if user:
 		flash('Username already exists')
+		return redirect(url_for('signup.signup_get'))
+	if len(username) > 150:
+		flash('Username must be shorter than 150 characters')
+		return redirect(url_for('signup.signup_get'))
+	if len(password) > 100:
+		flash('Password must be shorter than 100 characters')
 		return redirect(url_for('signup.signup_get'))
 	if password != repeatPassword:
 		flash('Passwords are different')

@@ -56,9 +56,79 @@ button:focus {
 	outline: 0;
 }
 
+a {
+	color: var(--TextColor);
+}
+
+a:hover {
+	color: var(--TextColor);
+	text-decoration: none;
+}
+
+a:focus {
+	color: var(--TextColor);
+	text-decoration: none;
+}
+
 .error-message-div {
 	border-radius: 5px;
 	background-color: var(--ErrorColor);
 	padding: 5px 10px 5px 10px;
 	margin: 5px auto 5px auto;
+}
+
+/* --- NAV BAR --- */
+
+.upchat-navbar {
+	background-color: #25282e;
+	min-height: 25px;
+	border-radius: 0;
+}
+
+.nav-left {
+	display: inline-block;
+	width: 50%;
+	text-align: left;
+}
+
+.nav-right {
+	display: inline-block;
+	width: 49%;
+	text-align: right;
+}
+
+.brand {
+	color: var(--UPChatColor);
+	font-family: 'MuseoModerno', sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	margin: 0 10px 0 10px;
+}
+
+.brand:hover {
+	color: var(--UPChatColor);
+	text-decoration: none;
+}
+
+.brand:focus {
+	color: var(--UPChatColor);
+	text-decoration: none;
+}
+
+.nav-username {
+	max-width: 250px;
+	overflow-x: hidden;
+	text-overflow: ellipsis;
+	margin-right: 10px;
+	margin-bottom: 0;
+	vertical-align: sub;
+	font-size: 16px;
+}
+
+.nav-form {
+	display: inline-block;
+}
+
+.nav-logout {
+	vertical-align: bottom;
 }

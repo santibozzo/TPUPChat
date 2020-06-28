@@ -24,7 +24,7 @@ def login_post():
 	user = get_user(username)
 	if user is not None and check_password_hash(user.password, password):
 		login_user(user)
-		return redirect(url_for('main.home'))
+		return redirect(url_for('chats.chats_get'))
 	else:
 		flash('Wrong username or password')
 		return redirect(url_for('login.login_get'))

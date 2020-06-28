@@ -7,6 +7,13 @@
 	<form method="POST" action="/login">
 		<input class="login-input" type="text" name="username" placeholder="username" autofocus=""/>
 		<input class="login-input" type="password" name="password" placeholder="password" />
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<div class="error-message-div login-error">
+					{{messages[0]}}
+				</div>
+			{% endif %}
+		{% endwith %}
 		<button class="login-button">Login</button>
 	</form>
 </div>

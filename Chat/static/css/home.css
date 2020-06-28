@@ -1,0 +1,27 @@
+
+.home-tittle {
+	font-size: 80px;
+	font-family: 'MuseoModerno', sans-serif;
+	margin-bottom: 70px;
+}
+
+.home-left {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+}
+
+.home-right {
+	display: inline-block;
+	width: 49%;
+	text-align: center;
+}
+
+.home-subtittle {
+	font-size: 50px;
+}
+
+.home-button {
+	height: 40px;
+	width: 30%;
+}

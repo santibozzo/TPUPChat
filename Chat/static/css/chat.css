@@ -1,10 +1,20 @@
+.chat-head-div {
+	text-align: left;
+}
+
+.chat-back-button {
+	margin-left: 1%;
+	height: 40px;
+	width: 100px;
+}
+
 .chat-container {
 	width: 100%;
 	text-align: center;
 }
 
 .chat-tittle {
-	margin-top: 20px;
+	margin-top: 0;
 	margin-bottom: 20px;
 }
 

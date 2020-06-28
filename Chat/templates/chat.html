@@ -4,6 +4,12 @@
 {% block content %}
 <div class="chat-container">
 
+	<div class="chat-head-div">
+		<a href="/chats">
+			<button class="chat-back-button">< Back</button>
+		</a>
+	</div>
+
 	<h1 class="chat-tittle">
 		Chat with
 		{% if chat.user1 != current_user.username %}

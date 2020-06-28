@@ -5,7 +5,7 @@ from flask import render_template
 from flask import redirect
 from flask import url_for
 from flask_login import current_user
-from Chat.models import Chat, get_user_chats, get_chat, create_chat, get_user
+from Chat.models import Chat, get_user_chats, get_chat_by_participants, create_chat, get_user
 
 chats = Blueprint('chats', __name__)
 

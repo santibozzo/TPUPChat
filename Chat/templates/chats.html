@@ -3,7 +3,7 @@
 
 {% block content %}
 	<div class="chats-container">
-		<h1 class="chats-tittle">Your chats</h1>
+		<h1 class="chats-tittle">My chats</h1>
 
 		<div class="chats-chats-section">
 			{% for chat in chats_list %}
@@ -34,7 +34,7 @@
 				<input class="chats-form-input" type="text" name="username" placeholder="username"/>
 				{% with messages = get_flashed_messages() %}
 					{% if messages %}
-						<div class="chats-form-error">
+						<div class="error-message-div chats-form-error">
 							{{messages[0]}}
 						</div>
 					{% endif %}
