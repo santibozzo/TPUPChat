@@ -36,6 +36,3 @@ def chats_post():
 	create_chat(new_chat)
 	return redirect(url_for('chats.chats_get'))
 
-@chats.route('/chats', methods=['DELETE'])
-def chat_delete():
-	return redirect(url_for('chats.chats_get'))

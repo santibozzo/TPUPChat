@@ -11,11 +11,12 @@ bootstrap = Bootstrap()
 login_manager = LoginManager()
 
 
-def create_app():
-	load_dotenv()
+def create_app(testing=False):
+	if not testing:
+		load_dotenv()
 	app = Flask(__name__)
 
-	app.config.from_object(config[os.environ.get('PROFILE')])
+	app.config.from_object(config['testing'] if testing else config[os.environ.get('PROFILE')])
 
 	db.init_app(app)
 	bootstrap.init_app(app)

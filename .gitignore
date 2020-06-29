@@ -1,8 +1,11 @@
 # IDE
 .idea/
 
-# bin
+# bin, auto generated
 __pycache__/
+tests/htmlcov/
+Chat.egg-info/
+tests/.coverage
 
 # local config
 .env
