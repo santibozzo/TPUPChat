@@ -11,12 +11,14 @@ from werkzeug.security import check_password_hash
 
 login = Blueprint('login', __name__)
 
+"""Gets login page"""
 @login.route('/login', methods=['GET'])
 def login_get():
 	if current_user.is_authenticated:
 		return redirect(url_for('chats.chats_get'))
 	return render_template('login.html')
 
+"""Logins user with given credentials"""
 @login.route('/login', methods=['POST'])
 def login_post():
 	username = request.form.get('username')

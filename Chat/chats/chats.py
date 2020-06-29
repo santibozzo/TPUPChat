@@ -9,6 +9,7 @@ from Chat.models import Chat, get_user_chats, get_chat_by_participants, create_c
 
 chats = Blueprint('chats', __name__)
 
+"""Gets chats page. Here all chats from current user are shown"""
 @chats.route('/chats', methods=['GET'])
 def chats_get():
 	if not current_user.is_authenticated:
@@ -16,6 +17,7 @@ def chats_get():
 	chats_list = get_user_chats(current_user.username)
 	return render_template('chats.html', chats_list=chats_list)
 
+"""Creates new chat with given user"""
 @chats.route('/chats', methods=['POST'])
 def chats_post():
 	username = request.form.get('username')

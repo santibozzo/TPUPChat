@@ -10,7 +10,7 @@ db = SQLAlchemy()
 bootstrap = Bootstrap()
 login_manager = LoginManager()
 
-
+"""Factory that creates instance of the app"""
 def create_app(testing=False):
 	if not testing:
 		load_dotenv()

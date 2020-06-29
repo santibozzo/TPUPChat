@@ -10,6 +10,7 @@ from datetime import datetime
 
 chat = Blueprint('chat', __name__)
 
+"""Gets chat page"""
 @chat.route('/chat', methods=['GET'])
 def chat_get():
 	if not current_user.is_authenticated:
@@ -22,6 +23,7 @@ def chat_get():
 		return render_template('chat.html', messages=messages, chat=chat)
 	return redirect(url_for('chats.chats_get'))
 
+"""Creates new message in actual chat"""
 @chat.route('/chat', methods=['POST'])
 def chat_post():
 	chat_id = request.args.get('id')

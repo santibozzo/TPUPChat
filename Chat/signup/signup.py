@@ -10,12 +10,14 @@ from werkzeug.security import generate_password_hash
 
 signup = Blueprint('signup', __name__)
 
+"""Gets signup page"""
 @signup.route('/signup', methods=['GET'])
 def signup_get():
 	if current_user.is_authenticated:
 		return redirect(url_for('chats.chats_get'))
 	return render_template('signup.html')
 
+"""Creates new user"""
 @signup.route('/signup', methods=['POST'])
 def signup_post():
 	username = request.form.get('username')
