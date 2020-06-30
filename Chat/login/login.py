@@ -29,4 +29,4 @@ def login_post():
 		return redirect(url_for('chats.chats_get'))
 	else:
 		flash('Wrong username or password')
-		return redirect(url_for('login.login_get'))
+		return redirect(url_for('login.login_get')), 303

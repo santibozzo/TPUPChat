@@ -56,6 +56,9 @@ $ flask run
 - Acceder por http://localhost:5000/
 
 ## Tests
+Si se intenta correr todos los test al mismo tiempo puede tirar un error al superar el máximo de pool de conexiones. 
+Se recomienda correr los test por separado al igual que correr su cobertura. Para poder generar un html de cobertura 
+más completo se recomienda correr el "test_chat.py".
 - Para correr los tests unitarios primero hay que settear la URI de la base de datos que vamos a usar por 
 linea de comando:
 ```
@@ -65,9 +68,17 @@ $ export TEST_DATABASE_URI=postgres://yourPostgreSQLDataBaseURI
 ```
 $ python -m unittest
 ```
+- Para correr un test en especifico correr:
+```
+$ python test_nombre.py
+```
 - Para correr los tests con covertura usar:
 ```
 $ coverage run -m unittest discover
+```
+- Para correr un test en especifico con covertura usar:
+```
+$ coverage run test_nombre.py
 ```
 - Para ver el resultado de covertura por consola correr:
 ```

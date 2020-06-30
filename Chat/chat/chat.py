@@ -30,7 +30,7 @@ def chat_post():
 	message = request.form.get('message')
 	if len(message) > 500:
 		flash('Message must be shorter than 500 characters')
-		return redirect(url_for('chat.chat_get', id=chat_id))
+		return redirect(url_for('chat.chat_get', id=chat_id)), 303
 	new_message = Message(
 		chat=chat_id,
 		from_user=current_user.username,

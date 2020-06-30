@@ -24,12 +24,12 @@ def chats_post():
 	user = get_user(username)
 	if user is None:
 		flash('No user found with that username')
-		return redirect(url_for('chats.chats_get'))
+		return redirect(url_for('chats.chats_get')), 303
 
 	chat = get_chat_by_participants(current_user.username, username)
 	if chat:
 		flash('There is already a chat with that user')
-		return redirect(url_for('chats.chats_get'))
+		return redirect(url_for('chats.chats_get')), 303
 
 	new_chat = Chat(
 		user1=current_user.username,
