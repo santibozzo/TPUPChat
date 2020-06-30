@@ -38,6 +38,8 @@ PRODUCTION_DATABASE_URI=postgres://yourPostgreSQLDataBaseURI
 luego correr lo siguiente estando parado en la base del proyecto:
 ```
 $ pip install --user -e .
+# O sin el --user en caso de error
+$ pip install -e .
 ```
 
 ## Desarrollo
